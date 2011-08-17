@@ -28,7 +28,7 @@
 		1A9356B413FC4CA400B04DE1 /* wood_red_b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AC13FC4CA400B04DE1 /* wood_red_b.jpg */; };
 		1A9356B513FC4CA400B04DE1 /* wood_soft_light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AD13FC4CA400B04DE1 /* wood_soft_light.jpg */; };
 		1A9356B613FC4CA400B04DE1 /* wood_soft_light_b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AE13FC4CA400B04DE1 /* wood_soft_light_b.jpg */; };
-		1AC2CD6513FC507200FF8EC1 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC2CD6413FC507200FF8EC1 /* Entitlements.plist */; };
+		1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE0FD813FC547900C93597 /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		1A9356AC13FC4CA400B04DE1 /* wood_red_b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_red_b.jpg; sourceTree = "<group>"; };
 		1A9356AD13FC4CA400B04DE1 /* wood_soft_light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_soft_light.jpg; sourceTree = "<group>"; };
 		1A9356AE13FC4CA400B04DE1 /* wood_soft_light_b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_soft_light_b.jpg; sourceTree = "<group>"; };
-		1AC2CD6413FC507200FF8EC1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		1ACE0FD813FC547900C93597 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 		1A93567513FC4C6400B04DE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1AC2CD6413FC507200FF8EC1 /* Entitlements.plist */,
+				1ACE0FD813FC547900C93597 /* Entitlements.plist */,
 				1A9356A613FC4CA400B04DE1 /* woodpack */,
 				1A93567613FC4C6400B04DE1 /* boardtest-Info.plist */,
 				1A93567713FC4C6400B04DE1 /* InfoPlist.strings */,
@@ -267,7 +267,7 @@
 				1A9356B413FC4CA400B04DE1 /* wood_red_b.jpg in Resources */,
 				1A9356B513FC4CA400B04DE1 /* wood_soft_light.jpg in Resources */,
 				1A9356B613FC4CA400B04DE1 /* wood_soft_light_b.jpg in Resources */,
-				1AC2CD6513FC507200FF8EC1 /* Entitlements.plist in Resources */,
+				1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
