@@ -46,7 +46,7 @@
     NSLog(@"SQUARESIZE IS: %f", squaresize);
     CALayer *aSquare = [CALayer layer];
     aSquare.bounds = CGRectMake(0, 0, squaresize, squaresize);
-    UIImage *foo = [UIImage imageNamed:@"testflighticon.png"];
+    UIImage *foo = [UIImage imageNamed:@"wood_red_64.png"]; //wood_light_64.png
     aSquare.contents = (id)[foo CGImage];
     aSquare.masksToBounds = YES;
     [boardGameView.layer addSublayer:aSquare];
