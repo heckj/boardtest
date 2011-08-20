@@ -42,6 +42,7 @@
 {
     [super viewDidAppear:animated];
     
+    
     float squaresize = boardGameView.bounds.size.width/15.0;
     NSLog(@"SQUARESIZE IS: %f", squaresize);
     CALayer *aSquare = [CALayer layer];
@@ -49,6 +50,7 @@
     UIImage *foo = [UIImage imageNamed:@"wood_red_64.png"]; //wood_light_64.png
     aSquare.contents = (id)[foo CGImage];
     aSquare.masksToBounds = YES;
+    aSquare.position = CGPointMake(44, 23);
     [boardGameView.layer addSublayer:aSquare];
 
 }

@@ -13,6 +13,7 @@
 		1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65A013140062E000BA36D6 /* QuartzCore.framework */; };
 		1A70771D14007183007E812E /* wood_red_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771B14007183007E812E /* wood_red_64.png */; };
 		1A70771E14007183007E812E /* wood_light_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771C14007183007E812E /* wood_light_64.png */; };
+		1A707721140072E5007E812E /* wood_background_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A707720140072E4007E812E /* wood_background_1024.png */; };
 		1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567013FC4C6400B04DE1 /* UIKit.framework */; };
 		1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567213FC4C6400B04DE1 /* Foundation.framework */; };
 		1A93567913FC4C6400B04DE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A93567713FC4C6400B04DE1 /* InfoPlist.strings */; };
@@ -55,6 +56,7 @@
 		1A65A013140062E000BA36D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A70771B14007183007E812E /* wood_red_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_red_64.png; sourceTree = "<group>"; };
 		1A70771C14007183007E812E /* wood_light_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_light_64.png; sourceTree = "<group>"; };
+		1A707720140072E4007E812E /* wood_background_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_background_1024.png; sourceTree = "<group>"; };
 		1A93566C13FC4C6400B04DE1 /* boardtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boardtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A93567013FC4C6400B04DE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A93567213FC4C6400B04DE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 		1A4DD746140058D50042A3E9 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				1A707720140072E4007E812E /* wood_background_1024.png */,
 				1A70771B14007183007E812E /* wood_red_64.png */,
 				1A70771C14007183007E812E /* wood_light_64.png */,
 				1A4DD747140058D50042A3E9 /* testflighticon.png */,
@@ -312,6 +315,7 @@
 				1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */,
 				1A70771D14007183007E812E /* wood_red_64.png in Resources */,
 				1A70771E14007183007E812E /* wood_light_64.png in Resources */,
+				1A707721140072E5007E812E /* wood_background_1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
