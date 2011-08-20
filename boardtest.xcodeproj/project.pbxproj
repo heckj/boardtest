@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4DD740140055F10042A3E9 /* libTestFlight.a */; };
+		1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4DD747140058D50042A3E9 /* testflighticon.png */; };
 		1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567013FC4C6400B04DE1 /* UIKit.framework */; };
 		1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567213FC4C6400B04DE1 /* Foundation.framework */; };
 		1A93567913FC4C6400B04DE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A93567713FC4C6400B04DE1 /* InfoPlist.strings */; };
@@ -39,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A4DD73E140055F10042A3E9 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		1A4DD73F140055F10042A3E9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		1A4DD740140055F10042A3E9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		1A4DD741140055F10042A3E9 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		1A4DD747140058D50042A3E9 /* testflighticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testflighticon.png; sourceTree = "<group>"; };
 		1A93566C13FC4C6400B04DE1 /* boardtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boardtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A93567013FC4C6400B04DE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A93567213FC4C6400B04DE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +84,7 @@
 			files = (
 				1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */,
 				1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */,
+				1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +101,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4DD73D140055F10042A3E9 /* testflightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1A4DD73E140055F10042A3E9 /* README.txt */,
+				1A4DD73F140055F10042A3E9 /* TestFlight.h */,
+				1A4DD740140055F10042A3E9 /* libTestFlight.a */,
+				1A4DD741140055F10042A3E9 /* release_notes.txt */,
+			);
+			path = testflightSDK;
+			sourceTree = "<group>";
+		};
+		1A4DD746140058D50042A3E9 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				1A4DD747140058D50042A3E9 /* testflighticon.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		1A93566113FC4C6400B04DE1 = {
 			isa = PBXGroup;
 			children = (
+				1A4DD73D140055F10042A3E9 /* testflightSDK */,
 				1A93567413FC4C6400B04DE1 /* boardtest */,
 				1A93569513FC4C6500B04DE1 /* boardtestTests */,
 				1A93566F13FC4C6400B04DE1 /* Frameworks */,
@@ -139,6 +167,7 @@
 		1A93567513FC4C6400B04DE1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A4DD746140058D50042A3E9 /* img */,
 				1AC7F6D014004FD80072ADAB /* GitTagBundleVersion.sh */,
 				1ACE0FD813FC547900C93597 /* Entitlements.plist */,
 				1A9356A613FC4CA400B04DE1 /* woodpack */,
@@ -265,6 +294,7 @@
 				1A9356B513FC4CA400B04DE1 /* wood_soft_light.jpg in Resources */,
 				1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */,
 				1AC7F6D114004FD80072ADAB /* GitTagBundleVersion.sh in Resources */,
+				1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +424,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -426,6 +457,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/testflightSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -439,6 +474,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/testflightSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -486,7 +525,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -495,6 +534,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -509,6 +549,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/testflightSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

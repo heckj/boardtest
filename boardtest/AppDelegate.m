@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        // launch test flight data consolidator..
+    [TestFlight takeOff:@"f379106537a500b86238b11e7b7e933d_MjQ2MjcyMDExLTA4LTIwIDE2OjU1OjAwLjgxMTk4NQ"];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil]; 

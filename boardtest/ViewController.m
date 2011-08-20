@@ -61,4 +61,10 @@
     }
 }
 
+#pragma mark - Feedback integration with TestFlight
+
+-(IBAction)launchFeedback {
+    [TestFlight openFeedbackView];
+}
+
 @end
