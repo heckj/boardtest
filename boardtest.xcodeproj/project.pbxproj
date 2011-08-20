@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4DD740140055F10042A3E9 /* libTestFlight.a */; };
 		1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4DD747140058D50042A3E9 /* testflighticon.png */; };
+		1A51ED8614005DBB000E29E7 /* BoardGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51ED8514005DBB000E29E7 /* BoardGameView.m */; };
+		1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65A013140062E000BA36D6 /* QuartzCore.framework */; };
 		1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567013FC4C6400B04DE1 /* UIKit.framework */; };
 		1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567213FC4C6400B04DE1 /* Foundation.framework */; };
 		1A93567913FC4C6400B04DE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A93567713FC4C6400B04DE1 /* InfoPlist.strings */; };
@@ -46,6 +48,9 @@
 		1A4DD740140055F10042A3E9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		1A4DD741140055F10042A3E9 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		1A4DD747140058D50042A3E9 /* testflighticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testflighticon.png; sourceTree = "<group>"; };
+		1A51ED8414005DBB000E29E7 /* BoardGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameView.h; sourceTree = "<group>"; };
+		1A51ED8514005DBB000E29E7 /* BoardGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameView.m; sourceTree = "<group>"; };
+		1A65A013140062E000BA36D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A93566C13FC4C6400B04DE1 /* boardtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boardtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A93567013FC4C6400B04DE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A93567213FC4C6400B04DE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */,
 				1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */,
 				1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */,
 				1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */,
@@ -143,6 +149,7 @@
 		1A93566F13FC4C6400B04DE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A65A013140062E000BA36D6 /* QuartzCore.framework */,
 				1A93567013FC4C6400B04DE1 /* UIKit.framework */,
 				1A93567213FC4C6400B04DE1 /* Foundation.framework */,
 				1A93568F13FC4C6500B04DE1 /* SenTestingKit.framework */,
@@ -155,6 +162,8 @@
 			children = (
 				1A93567D13FC4C6500B04DE1 /* AppDelegate.h */,
 				1A93567E13FC4C6500B04DE1 /* AppDelegate.m */,
+				1A51ED8414005DBB000E29E7 /* BoardGameView.h */,
+				1A51ED8514005DBB000E29E7 /* BoardGameView.m */,
 				1A93568013FC4C6500B04DE1 /* ViewController.h */,
 				1A93568113FC4C6500B04DE1 /* ViewController.m */,
 				1A93568313FC4C6500B04DE1 /* ViewController_iPhone.xib */,
@@ -345,6 +354,7 @@
 				1A93567B13FC4C6400B04DE1 /* main.m in Sources */,
 				1A93567F13FC4C6500B04DE1 /* AppDelegate.m in Sources */,
 				1A93568213FC4C6500B04DE1 /* ViewController.m in Sources */,
+				1A51ED8614005DBB000E29E7 /* BoardGameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

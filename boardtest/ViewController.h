@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BoardGameView.h"
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet BoardGameView *boardGameView;
 
 -(IBAction)launchFeedback;
 

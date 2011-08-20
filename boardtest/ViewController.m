@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize boardGameView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +27,7 @@
 
 - (void)viewDidUnload
 {
+    [self setBoardGameView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -39,6 +41,16 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    float squaresize = boardGameView.bounds.size.width/15.0;
+    NSLog(@"SQUARESIZE IS: %f", squaresize);
+    CALayer *aSquare = [CALayer layer];
+    aSquare.bounds = CGRectMake(0, 0, squaresize, squaresize);
+    UIImage *foo = [UIImage imageNamed:@"testflighticon.png"];
+    aSquare.contents = (id)[foo CGImage];
+    aSquare.masksToBounds = YES;
+    [boardGameView.layer addSublayer:aSquare];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
