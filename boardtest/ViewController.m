@@ -43,6 +43,7 @@
     [super viewDidAppear:animated];
     
     GameBoard *gb = [[GameBoard alloc] init];
+    [gb boardStart];
     [self.boardGameView displayGameBoard:gb];
 }
 

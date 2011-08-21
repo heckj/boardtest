@@ -12,48 +12,89 @@
 @implementation BoardGameView
 
 @synthesize board;
+@synthesize gridcells;
+@synthesize squaresize;
 
 - (void)displayGameBoard:(GameBoard *)newBoard
 {
     self.board = newBoard;
-    
-    float squaresize = 0.0;
-    if (self.bounds.size.width > self.bounds.size.height) {
-        squaresize = self.bounds.size.height/BOARD_HEIGHT;
-    } else {
-        squaresize = self.bounds.size.width/BOARD_HEIGHT;
+    UIImage *redPiece = [UIImage imageNamed:@"ball-red.png"];
+    UIImage *whitePiece = [UIImage imageNamed:@"ball-white.png"];
+    UIImage *blackPiece = [UIImage imageNamed:@"ball-black.png"];
+    NSLog(@"Board has %d positions", [self.board.boardPositions count]);
+    for (int ii=0; ii < [self.board.boardPositions count]; ii++) {
+        NSNumber *piece = [self.board.boardPositions objectAtIndex:ii];
+        NSLog(@"displaying position %d", ii);
+        if ([piece intValue]>0) {
+            CALayer *gamepiecelayer = [CALayer layer];            
+            gamepiecelayer.bounds = CGRectMake(0, 0, self.squaresize, self.squaresize);
+            gamepiecelayer.position = CGPointMake(self.squaresize/2.0, self.squaresize/2);
+            if ([piece intValue] == 1) {
+                    // attacker
+                gamepiecelayer.contents = (id)[whitePiece CGImage];
+            } else {
+                if ([piece intValue] == 2) {
+                    // defender
+                    gamepiecelayer.contents = (id)[blackPiece CGImage];
+                } else {
+                    // king
+                    gamepiecelayer.contents = (id)[redPiece CGImage];
+                }
+            }
+            gamepiecelayer.masksToBounds = YES;
+            UIImageView *gridcell = [gridcells objectAtIndex:ii];
+            [gridcell.layer addSublayer:gamepiecelayer];
+        }
     }
-    NSLog(@"SQUARESIZE IS: %f", squaresize);
-    
-    for (int x=0; x<BOARD_WIDTH; x++) {
-        for (int y=0; y<BOARD_HEIGHT; y++) {
+        // iterate through the board, putting in pieces
+        // where appropriate...
+}
+
+- (void)initializeView
+{
+    // determine the size of the squares of the board
+    // based on the bounds of this view...
+    NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:(BOARD_HEIGHT*BOARD_WIDTH)];
+    if (self.bounds.size.width > self.bounds.size.height) {
+        self.squaresize = self.bounds.size.height/BOARD_HEIGHT;
+    } else {
+        self.squaresize = self.bounds.size.width/BOARD_HEIGHT;
+    }
+        //NSLog(@"SQUARESIZE IS: %f", squaresize);
+        // add the subviews that make up the background of the board
+    for (int y=0; y<BOARD_HEIGHT; y++) {
+        for (int x=0; x<BOARD_WIDTH; x++) {
             int position = x+y*BOARD_HEIGHT;
             NSString *cell_image = [NSString stringWithString:@"wood_red_64.png"];
             if ((position % 2)==0) {
                 cell_image = [NSString stringWithString:@"wood_light_64.png"];
             }            
             UIImageView *gridcell = [[UIImageView alloc] initWithImage:[UIImage imageNamed:cell_image]];
+            // keep a handy reference to those subviews in an array...
+            [newArray insertObject:gridcell atIndex:position];
             [self addSubview:gridcell];
             gridcell.frame = CGRectMake(x*squaresize, y*squaresize, squaresize, squaresize);
-                //NSLog(@" %d, %d is %d", x,y,newBoard[position]);
         }
     }
+    self.gridcells = newArray;
     [self setNeedsDisplay];
-//    CALayer *aSquare = [CALayer layer];
-//    aSquare.bounds = CGRectMake(0, 0, squaresize, squaresize);
-//    UIImage *foo = [UIImage imageNamed:@"wood_red_64.png"]; //wood_light_64.png
-//    aSquare.contents = (id)[foo CGImage];
-//    aSquare.masksToBounds = YES;
-//    aSquare.position = CGPointMake(44, 23);
-//    [boardGameView.layer addSublayer:aSquare];
 }
 
+- (id) initWithCoder:(NSCoder *)aCoder
+{
+    // initializes from NIB
+    if(self = [super initWithCoder:aCoder]){
+        [self initializeView];
+    }
+   return self;
+}
+               
 - (id)initWithFrame:(CGRect)frame
 {
+    // initializes programatically
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        self.backgroundColor = [UIColor blackColor];
+        [self initializeView];
     }
     return self;
 }

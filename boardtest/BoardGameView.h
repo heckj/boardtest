@@ -14,7 +14,10 @@
 @interface BoardGameView : UIView
 
 @property (strong, nonatomic) GameBoard *board;
+@property (strong, nonatomic) NSArray *gridcells;
+@property (nonatomic) float squaresize;
 
+- (void)initializeView;
 - (void)displayGameBoard:(GameBoard *)board;
 
 @end
