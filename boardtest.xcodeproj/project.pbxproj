@@ -58,6 +58,7 @@
 		1A49E13414009E4E0033963B /* GameMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMove.m; sourceTree = "<group>"; };
 		1A49E1371400A0040033963B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		1A49E1381400A0040033963B /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		1A4A656E1401515B00A45B7E /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		1A4DD73E140055F10042A3E9 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		1A4DD73F140055F10042A3E9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		1A4DD740140055F10042A3E9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		1A93567413FC4C6400B04DE1 /* boardtest */ = {
 			isa = PBXGroup;
 			children = (
+				1A4A656E1401515B00A45B7E /* constants.h */,
 				1A93567D13FC4C6500B04DE1 /* AppDelegate.h */,
 				1A49E1371400A0040033963B /* Player.h */,
 				1A49E1381400A0040033963B /* Player.m */,

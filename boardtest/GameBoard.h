@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GameMove.h"
 #import "Player.h"
+#import "constants.h"
 
 @interface GameBoard : NSObject
 
