@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "GameBoard.h"
+#import "constants.h"
 
 @interface BoardGameView : UIView
+
+@property (strong, nonatomic) GameBoard *board;
+
+- (void)displayGameBoard:(GameBoard *)board;
 
 @end

@@ -10,4 +10,9 @@
 
 @interface GameMove : NSObject
 
+@property (nonatomic) int fromX;
+@property (nonatomic) int fromY;
+@property (nonatomic) int toX;
+@property (nonatomic) int toY;
+
 @end

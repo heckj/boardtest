@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BoardGameView.h"
+#import "GameBoard.h"
 
 @interface ViewController : UIViewController
 

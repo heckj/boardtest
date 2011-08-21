@@ -10,4 +10,6 @@
 
 @implementation GameMove
 
+@synthesize fromX, fromY, toX, toY;
+
 @end
