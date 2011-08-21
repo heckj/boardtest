@@ -7,7 +7,12 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "GameBoard.h"
+#import "GameMove.h"
+#import "Player.h"
 
 @interface boardtestTests : SenTestCase
+
+- (void)testGameBoardPieces;
 
 @end
