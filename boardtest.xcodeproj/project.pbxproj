@@ -372,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = /Users/heckj/Documents/code/boardtest/GitTagBundleVersion.sh;
+			shellScript = "$(pwd)/GitTagBundleVersion.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
