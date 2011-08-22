@@ -355,7 +355,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "Nebula, Inc";
+				ORGANIZATIONNAME = "Deallus Software";
 			};
 			buildConfigurationList = 1A93566613FC4C6400B04DE1 /* Build configuration list for PBXProject "boardtest" */;
 			compatibilityVersion = "Xcode 3.2";

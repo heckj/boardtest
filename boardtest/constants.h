@@ -3,7 +3,7 @@
 //  boardtest
 //
 //  Created by Joseph Heck on 8/21/11.
-//  Copyright (c) 2011 Nebula, Inc. All rights reserved.
+//  Copyright (c) 2011 Deallus Software. All rights reserved.
 //
 
 #ifndef boardtest_constants_h
