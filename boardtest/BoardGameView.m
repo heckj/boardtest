@@ -14,40 +14,100 @@
 @synthesize board;
 @synthesize gridcells;
 @synthesize squaresize;
+@synthesize boardpieces;
 
-- (void)displayGameBoard:(GameBoard *)newBoard
+/*
+ * what piece is at location (x,y)
+ * hit test to find piece from touch
+ * 
+ * UI: player moves piece
+ *  - makes "move" object
+ *  - is valid move? (gameboard+move)
+ *  - IF YES:
+ *    - finish animation of move
+ *    - make move (update gameboard)
+ *    - get effect of move (other piece captured)?
+ *    - display effects
+ *    - update game, next player's turn
+ */
+
+/*
+ *   app -> gameboard
+ * BoardViewController -> BoardGameView -> UIImageView Array (gridcells) for board
+ *                              |      \-> UIImageView Array (boardpieces) for pieces
+ *                              +--> touches logic
+ */
+
+- (void)tempMovePiece {
+    int x = 4; 
+    int y = 1;
+    
+    //verify piece
+    NSNumber *piece = [self.board pieceAtX:x Y:y];
+    NSLog(@"Piece at %d x %d is %@", x, y, piece);
+    
+//    int position = positionXY;
+//    UIImageView* gridcell = [self.gridcells objectAtIndex:position];
+    
+        //CALayer *pieceLayer = pull the layer from the UIImageView?
+        // use another array for the pieces, set the locations of them
+        // based on the X,Y positions in the GameBoard instance?
+    
+        //each piece is it's own UIImageView (subclass?) with additional
+        //information in it - X, Y coordinates. Use hit testing to find
+        // the relevant piece with a touch, or can iterate through list
+        // of them and look it up by x, y coordinates stored with the piece.
+    
+        // every "move", need to update the X,Y coordinates of the piece
+        // in that array. How to deal with captures?
+}
+
+- (CGPoint) centerForGamePositionX: (int) x Y: (int) y {
+    return CGPointMake(x*squaresize+(squaresize/2), y*squaresize+(squaresize/2));
+}
+
+- (void)initializePieces:(GameBoard *)newBoard
 {
     self.board = newBoard;
-    UIImage *redPiece = [UIImage imageNamed:@"ball-red.png"];
-    UIImage *whitePiece = [UIImage imageNamed:@"ball-white.png"];
-    UIImage *blackPiece = [UIImage imageNamed:@"ball-black.png"];
-    NSLog(@"Board has %d positions", [self.board.boardPositions count]);
-    for (int ii=0; ii < [self.board.boardPositions count]; ii++) {
-        NSNumber *piece = [self.board.boardPositions objectAtIndex:ii];
-        NSLog(@"displaying position %d", ii);
-        if ([piece intValue]>0) {
-            CALayer *gamepiecelayer = [CALayer layer];            
-            gamepiecelayer.bounds = CGRectMake(0, 0, self.squaresize, self.squaresize);
-            gamepiecelayer.position = CGPointMake(self.squaresize/2.0, self.squaresize/2);
-            if ([piece intValue] == 1) {
-                    // attacker
-                gamepiecelayer.contents = (id)[whitePiece CGImage];
-            } else {
-                if ([piece intValue] == 2) {
-                    // defender
-                    gamepiecelayer.contents = (id)[blackPiece CGImage];
-                } else {
-                    // king
-                    gamepiecelayer.contents = (id)[redPiece CGImage];
+    UIImage *redPieceImage = [UIImage imageNamed:@"ball-red.png"];
+    UIImage *whitePieceImage = [UIImage imageNamed:@"ball-white.png"];
+    UIImage *blackPieceImage = [UIImage imageNamed:@"ball-black.png"];
+    for (int y=0; y<BOARD_HEIGHT; y++) {
+        for (int x=0; x<BOARD_WIDTH; x++) {
+            int position = positionXY;
+        
+            NSNumber *piecetype = [self.board.boardPositions objectAtIndex:position];
+            if ([piecetype intValue]>0) {
+                BoardPiece *newpiece = [[BoardPiece alloc] initWithImage:whitePieceImage];
+                if ([piecetype intValue] == 2) {
+                        // defender
+                    newpiece.image = blackPieceImage;
+                } 
+                if ([piecetype intValue] == 3) {
+                            // king
+                        newpiece.image = redPieceImage;
                 }
+                newpiece.bounds = CGRectMake(0, 0, squaresize, squaresize);
+                newpiece.piecetype = piecetype;
+                newpiece.X = x;
+                newpiece.Y = y;                
+                [self addSubview:newpiece];
+                [self bringSubviewToFront:newpiece];
+                newpiece.center = [self centerForGamePositionX:x Y:y];
             }
-            gamepiecelayer.masksToBounds = YES;
-            UIImageView *gridcell = [gridcells objectAtIndex:ii];
-            [gridcell.layer addSublayer:gamepiecelayer];
         }
     }
-        // iterate through the board, putting in pieces
-        // where appropriate...
+}
+
+- (void)logViewStrucure {
+    NSLog(@"SUBVIEWS...");
+    for (int ii=0; ii < [self.subviews count]; ii++){
+        UIView *aView = [self.subviews objectAtIndex:ii];
+        NSLog(@"view[%d]:  %@", ii, aView);
+    }
+//    for (UIView *aView in self.subviews) {
+//        
+//    }
 }
 
 - (void)initializeView
@@ -64,7 +124,7 @@
         // add the subviews that make up the background of the board
     for (int y=0; y<BOARD_HEIGHT; y++) {
         for (int x=0; x<BOARD_WIDTH; x++) {
-            int position = x+y*BOARD_HEIGHT;
+            int position = positionXY;
             NSString *cell_image = [NSString stringWithString:@"wood_red_64.png"];
             if ((position % 2)==0) {
                 cell_image = [NSString stringWithString:@"wood_light_64.png"];

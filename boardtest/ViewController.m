@@ -44,7 +44,8 @@
     
     GameBoard *gb = [[GameBoard alloc] init];
     [gb boardStart];
-    [self.boardGameView displayGameBoard:gb];
+    [self.boardGameView initializePieces:gb];
+//    [self.boardGameView logViewStrucure];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

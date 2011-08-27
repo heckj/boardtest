@@ -10,14 +10,21 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GameBoard.h"
 #import "constants.h"
+#import "BoardPiece.h"
 
 @interface BoardGameView : UIView
 
 @property (strong, nonatomic) GameBoard *board;
 @property (strong, nonatomic) NSArray *gridcells;
+@property (strong, nonatomic) NSMutableArray *boardpieces;
 @property (nonatomic) float squaresize;
 
+- (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
 - (void)initializeView;
-- (void)displayGameBoard:(GameBoard *)board;
+- (void)initializePieces:(GameBoard *)board;
+
+- (void)logViewStrucure;
+
+- (void)tempMovePiece;
 
 @end

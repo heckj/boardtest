@@ -42,7 +42,7 @@
 }
 
 -(NSNumber *)pieceAtX: (int) x Y: (int) y {
-    int position = x+y*BOARD_HEIGHT;
+    int position = positionXY;
     NSNumber *piece = [boardPositions objectAtIndex:position];
     return piece;
 }
