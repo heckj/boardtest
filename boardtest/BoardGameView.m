@@ -16,6 +16,7 @@
 @synthesize squaresize;
 @synthesize boardpieces;
 
+@synthesize blah;
 /*
  * what piece is at location (x,y)
  * hit test to find piece from touch
@@ -41,16 +42,34 @@
 - (void)tempMovePiece {
     int x = 4; 
     int y = 0;
-    
-    //verify piece
-    NSNumber *piece = [self.board pieceAtX:x Y:y];
-    NSLog(@"Piece at %d x %d is %@", x, y, piece);
-    
-    BoardPiece *pieceToMove = [self pieceAtX:x Y:y];
-    NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
-    if (pieceToMove != nil) {
-        pieceToMove.center = [self centerForGamePositionX:4 Y:2];
-        [self setNeedsDisplay];
+    if (self.blah == 0) {
+        //verify piece
+        NSNumber *piece = [self.board pieceAtX:x Y:y];
+        NSLog(@"Piece at %d x %d is %@", x, y, piece);
+        
+        self.blah = 1;
+        BoardPiece *pieceToMove = [self pieceAtX:x Y:y];
+        NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
+        if (pieceToMove != nil) {
+            pieceToMove.X = 4;
+            pieceToMove.Y = 2;
+            [UIView animateWithDuration:1.0 animations:^{
+                pieceToMove.center = [self centerForGamePositionX:4 Y:2];
+            }];            
+        }
+    } else {
+        x = 4;
+        y = 2;
+        self.blah = 0;
+        BoardPiece *pieceToMove = [self pieceAtX:x Y:y];
+        NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
+        if (pieceToMove != nil) {
+            pieceToMove.X = 4;
+            pieceToMove.Y = 0;
+            [UIView animateWithDuration:1.0 animations:^{
+                pieceToMove.center = [self centerForGamePositionX:4 Y:0];
+            }];            
+        }
     }
 }
 
@@ -144,6 +163,8 @@
     }
     self.gridcells = newArray;
     [self setNeedsDisplay];
+    
+    self.blah = 0;
 }
 
 - (id) initWithCoder:(NSCoder *)aCoder

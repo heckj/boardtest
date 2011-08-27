@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *gridcells;
 @property (strong, nonatomic) NSMutableArray *boardpieces;
 @property (nonatomic) float squaresize;
+@property (nonatomic) int blah;
 
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
 - (BoardPiece *) pieceAtX: (int) x Y: (int) y;
