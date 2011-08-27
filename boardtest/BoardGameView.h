@@ -20,6 +20,7 @@
 @property (nonatomic) float squaresize;
 
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
+- (BoardPiece *) pieceAtX: (int) x Y: (int) y;
 - (void)initializeView;
 - (void)initializePieces:(GameBoard *)board;
 

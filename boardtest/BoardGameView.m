@@ -40,26 +40,31 @@
 
 - (void)tempMovePiece {
     int x = 4; 
-    int y = 1;
+    int y = 0;
     
     //verify piece
     NSNumber *piece = [self.board pieceAtX:x Y:y];
     NSLog(@"Piece at %d x %d is %@", x, y, piece);
     
-//    int position = positionXY;
-//    UIImageView* gridcell = [self.gridcells objectAtIndex:position];
-    
-        //CALayer *pieceLayer = pull the layer from the UIImageView?
-        // use another array for the pieces, set the locations of them
-        // based on the X,Y positions in the GameBoard instance?
-    
-        //each piece is it's own UIImageView (subclass?) with additional
-        //information in it - X, Y coordinates. Use hit testing to find
-        // the relevant piece with a touch, or can iterate through list
-        // of them and look it up by x, y coordinates stored with the piece.
-    
-        // every "move", need to update the X,Y coordinates of the piece
-        // in that array. How to deal with captures?
+    BoardPiece *pieceToMove = [self pieceAtX:x Y:y];
+    NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
+    if (pieceToMove != nil) {
+        pieceToMove.center = [self centerForGamePositionX:4 Y:2];
+        [self setNeedsDisplay];
+    }
+}
+
+- (BoardPiece *) pieceAtX: (int) x Y: (int) y {
+        // yes - this sucks - it's the full tablescan of all the pieces...
+    for (BoardPiece *piece in self.boardpieces) {
+        NSLog(@"Piece %@ [%d,%d] is %@", piece, piece.X, piece.Y, piece.piecetype);
+        if (piece.X == x) {
+            if (piece.Y == y) {
+                return piece;
+            }
+        }
+    }
+    return nil;
 }
 
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y {
@@ -93,6 +98,7 @@
                 newpiece.Y = y;                
                 [self addSubview:newpiece];
                 [self bringSubviewToFront:newpiece];
+                [self.boardpieces addObject:newpiece];
                 newpiece.center = [self centerForGamePositionX:x Y:y];
             }
         }
@@ -145,6 +151,7 @@
     // initializes from NIB
     if(self = [super initWithCoder:aCoder]){
         [self initializeView];
+        self.boardpieces = [[NSMutableArray alloc] initWithCapacity:36];
     }
    return self;
 }

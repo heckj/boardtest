@@ -70,6 +70,10 @@
 
 #pragma mark - Feedback integration with TestFlight
 
+- (IBAction)DoThatMoveThing:(id)sender {
+    [self.boardGameView tempMovePiece];
+}
+
 -(IBAction)launchFeedback {
     [TestFlight openFeedbackView];
 }

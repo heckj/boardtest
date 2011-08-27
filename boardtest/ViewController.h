@@ -13,7 +13,7 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet BoardGameView *boardGameView;
-
+- (IBAction)DoThatMoveThing:(id)sender;
 -(IBAction)launchFeedback;
 
 @end
