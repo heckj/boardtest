@@ -50,7 +50,7 @@
     int y = 0;
     if (self.blah == 0) {
         //verify piece
-        NSNumber *piece = [self.board pieceAtX:x Y:y];
+//        NSNumber *piece = [self.board pieceAtX:x Y:y];
 //        NSLog(@"Piece at %d x %d is %@", x, y, piece);
         
         self.blah = 1;
