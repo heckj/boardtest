@@ -20,8 +20,14 @@
 @property (nonatomic) float squaresize;
 @property (nonatomic) int blah;
 
+@property (nonatomic) CGPoint startMovePosition;
+@property (strong, nonatomic) BoardPiece *pieceBeingMoved; 
+@property (nonatomic) BOOL movingAPiece;
+
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
-- (BoardPiece *) pieceAtX: (int) x Y: (int) y;
+- (BoardPiece *) pieceAtBoardLocationX: (int) x Y: (int) y;
+- (BoardPiece *) pieceAtCGPoint: (CGPoint) point;
+
 - (void)initializeView;
 - (void)initializePieces:(GameBoard *)board;
 
