@@ -52,6 +52,10 @@
     return Nil;
 }
 
+-(BOOL) isValidMove: (GameMove *)move {
+    return NO;
+}
+
 -(GameBoard *)makeMove: (GameMove *)move {
     //returns a new gameboard
     return Nil;

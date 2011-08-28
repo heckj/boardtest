@@ -260,19 +260,24 @@
 //    NSLog(@"TOUCH END at [%f,%f]", currentPosition.x, currentPosition.y);
 //    NSLog(@"TOUCH: Tap count: %d", touch.tapCount);
     if (self.pieceBeingMoved != nil) {
-        int boardX = floor(currentPosition.x / squaresize);
-        int boardY = floor(currentPosition.y / squaresize);
-            // piece still has original X, Y coordinates - use this combination
-            // to create a move object and see if it's valid by the gameboard
-        if ([self pieceAtCGPoint:currentPosition] == nil) {
-                // checking to make sure nothing is there now
-            [UIView animateWithDuration:0.5 animations:^{
-                self.pieceBeingMoved.center = [self centerForGamePositionX:boardX Y:boardY];
-            }];
-            self.pieceBeingMoved.X = boardX;
-            self.pieceBeingMoved.Y = boardY;
+        // piece still has original X, Y coordinates - use this combination
+        // to create a move object and see if it's valid by the gameboard
+        GameMove *proposedMove = [[GameMove alloc] init];
+        proposedMove.fromX = pieceBeingMoved.X;
+        proposedMove.fromY = pieceBeingMoved.Y;
+        proposedMove.toX = floor(currentPosition.x / squaresize);
+        proposedMove.toY = floor(currentPosition.y / squaresize);
+        
+        if ([self.board isValidMove:proposedMove]) {            
+//        }
+//        if ([self pieceAtCGPoint:currentPosition] == nil) {
+            // checking to make sure nothing is there now
+            [self movePiece:pieceBeingMoved withMove:proposedMove];
+                // update the game board object with the new move
+            GameBoard *newBoard = [self.board makeMove:proposedMove];
+            self.board = newBoard;
         } else {
-                //invalid move - revert...
+            //invalid move - animate piece reverting...
             [UIView animateWithDuration:0.5 animations:^{
                 self.pieceBeingMoved.center = [self centerForGamePositionX:pieceBeingMoved.X Y:pieceBeingMoved.Y];
             }];
@@ -280,6 +285,14 @@
     }
 //    NSLog(@"--------------------------------");
     self.pieceBeingMoved = nil;
+}
+
+- (void) movePiece:(BoardPiece *)piece withMove:(GameMove *)move {
+    [UIView animateWithDuration:0.5 animations:^{
+        piece.center = [self centerForGamePositionX:move.toX Y:move.toY];
+    }];
+    piece.X = move.toX;
+    piece.Y = move.toY;
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {

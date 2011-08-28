@@ -49,6 +49,7 @@
 
 -(NSNumber *)pieceAtX: (int) x Y: (int) y;
 -(GameMove *) getMoves; // returns list of GameMove objects
+-(BOOL) isValidMove: (GameMove *)move;
 -(GameBoard *)makeMove: (GameMove *)move; //returns a new gameboard
 -(float)evaluate: (Player *)player;
 

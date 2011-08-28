@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "GameBoard.h"
+#import "GameMove.h"
 #import "constants.h"
 #import "BoardPiece.h"
 
@@ -28,6 +29,7 @@
 - (BoardPiece *) pieceAtBoardLocationX: (int) x Y: (int) y;
 - (BoardPiece *) pieceAtCGPoint: (CGPoint) point;
 
+- (void)movePiece:(BoardPiece *)piece withMove:(GameMove *)move;
 - (void)initializeView;
 - (void)initializePieces:(GameBoard *)board;
 
