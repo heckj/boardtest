@@ -55,6 +55,9 @@
 }
 
 -(BOOL) isValidMove: (GameMove *)move {
+        // TODO: check to make sure that the player owns the piece
+        // about to be moved!
+    
     if ([[self pieceAtX:move.toX Y:move.toY] intValue] != 0) {
             //another piece is at that location - not a valid move
         return NO;
