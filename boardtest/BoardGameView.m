@@ -1,10 +1,10 @@
-//
-//  BoardGameView.m
-//  boardtest
-//
-//  Created by Joseph Heck on 8/20/11.
-//  Copyright (c) 2011 Deallus Software. All rights reserved.
-//
+    //
+    //  BoardGameView.m
+    //  boardtest
+    //
+    //  Created by Joseph Heck on 8/20/11.
+    //  Copyright (c) 2011 Deallus Software. All rights reserved.
+    //
 
 #import "BoardGameView.h"
 
@@ -16,11 +16,8 @@
 @synthesize squaresize;
 @synthesize boardpieces;
 
-@synthesize blah;
-
 @synthesize startMovePosition;
 @synthesize pieceBeingMoved;
-@synthesize movingAPiece;
 
 /*
  * what piece is at location (x,y)
@@ -37,50 +34,15 @@
  *    - update game, next player's turn
  */
 
-/*
- *   app -> gameboard
- * BoardViewController -> BoardGameView -> UIImageView Array (gridcells) for board
- *                              |      \-> UIImageView Array (boardpieces) for pieces
- *                              +--> touches logic
- */
-
-
-- (void)tempMovePiece {
-    int x = 4; 
-    int y = 0;
-    if (self.blah == 0) {
-        //verify piece
-//        NSNumber *piece = [self.board pieceAtX:x Y:y];
-//        NSLog(@"Piece at %d x %d is %@", x, y, piece);
-        
-        self.blah = 1;
-        BoardPiece *pieceToMove = [self pieceAtBoardLocationX:x Y:y];
-//        NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
-        if (pieceToMove != nil) {
-            pieceToMove.X = 4;
-            pieceToMove.Y = 2;
-            [UIView animateWithDuration:1.0 animations:^{
-                pieceToMove.center = [self centerForGamePositionX:4 Y:2];
-            }];            
-        }
-    } else {
-        x = 4;
-        y = 2;
-        self.blah = 0;
-        BoardPiece *pieceToMove = [self pieceAtBoardLocationX:x Y:y];
-//        NSLog(@"Piece at %d x %d is %@", x, y, pieceToMove);
-        if (pieceToMove != nil) {
-            pieceToMove.X = 4;
-            pieceToMove.Y = 0;
-            [UIView animateWithDuration:1.0 animations:^{
-                pieceToMove.center = [self centerForGamePositionX:4 Y:0];
-            }];            
-        }
-    }
-}
 
 - (BoardPiece *) pieceAtBoardLocationX: (int) x Y: (int) y {
-        // yes - this sucks - it's the full tablescan of all the pieces...
+    /*
+     * Iterate through the (yes, it sucks) entire array of pieces on
+     * the board and find that one that has the board's X,Y location
+     * associated with it.
+     * 
+     * Returns nil if no BoardPiece matched.
+     */
     for (BoardPiece *piece in self.boardpieces) {
             //NSLog(@"Piece %@ [%d,%d] is %@", piece, piece.X, piece.Y, piece.piecetype);
         if (piece.X == x) {
@@ -93,8 +55,11 @@
 }
 
 - (BoardPiece *) pieceAtCGPoint: (CGPoint) point {
-    //converts view based CGPoint into an X, Y location and returns the piece
-    //at that location.
+    /*
+     * converts view based CGPoint into an X, Y location on the board based on 
+     * the current view and returns a reference to the BoardPiece (piece) at that
+     * location.
+     */
     int x = floor(point.x / squaresize);
     int y = floor(point.y / squaresize);
     return [self pieceAtBoardLocationX:x Y:y];
@@ -104,33 +69,23 @@
     return CGPointMake(x*squaresize+(squaresize/2), y*squaresize+(squaresize/2));
 }
 
-- (void)logViewStrucure {
-    NSLog(@"SUBVIEWS...");
-    for (int ii=0; ii < [self.subviews count]; ii++){
-        UIView *aView = [self.subviews objectAtIndex:ii];
-        NSLog(@"view[%d]:  %@", ii, aView);
-    }
-//    for (UIView *aView in self.subviews) {
-//        
-//    }
-}
 
 #pragma mark - 
 #pragma mark Initialization
 
 - (id) initWithCoder:(NSCoder *)aCoder
 {
-    // initializes from NIB
+        // initializes from NIB
     if(self = [super initWithCoder:aCoder]){
         [self initializeView];
         self.boardpieces = [[NSMutableArray alloc] initWithCapacity:36];
     }
-   return self;
+    return self;
 }
-               
+
 - (id)initWithFrame:(CGRect)frame
 {
-    // initializes programatically
+        // initializes programatically
     self = [super initWithFrame:frame];
     if (self) {
         [self initializeView];
@@ -166,10 +121,6 @@
     }
     self.gridcells = newArray;
     [self setNeedsDisplay];
-    
-    self.blah = 0;
-    
-    self.movingAPiece = NO;
 }
 
 - (void)initializePieces:(GameBoard *)newBoard
@@ -209,59 +160,67 @@
 #pragma mark Custom Drawing
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
+
+- (void)logViewStrucure {
+    NSLog(@"SUBVIEWS...");
+    for (int ii=0; ii < [self.subviews count]; ii++){
+        UIView *aView = [self.subviews objectAtIndex:ii];
+        NSLog(@"view[%d]:  %@", ii, aView);
+    }
 }
-*/
 
 #pragma mark Touches
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    NSLog(@"touchesBegan");
-//    NSLog(@"Touches had %d touch objects in the set", [touches count]);
+        //    NSLog(@"touchesBegan");
+        //    NSLog(@"Touches had %d touch objects in the set", [touches count]);
     UITouch *touch = touches.anyObject;
-//    NSLog(@"Touch %@", touch);
-//    NSLog(@"Tap count: %d", touch.tapCount);
-
+        //    NSLog(@"Touch %@", touch);
+        //    NSLog(@"Tap count: %d", touch.tapCount);
+    
     
     self.startMovePosition = [touch locationInView:self];
-//    NSLog(@"Start move position is [%f,%f]", self.startMovePosition.x, self.startMovePosition.y);
+        //    NSLog(@"Start move position is [%f,%f]", self.startMovePosition.x, self.startMovePosition.y);
     
     BoardPiece *maybe = [self pieceAtCGPoint:self.startMovePosition];
-//    NSLog(@"TOUCH: Working on piece: %@", maybe);
+        //    NSLog(@"TOUCH: Working on piece: %@", maybe);
     self.pieceBeingMoved = maybe;
     
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"touchesMoved");
-//    NSLog(@"Touches had %d touch objects in the set", [touches count]);
-//    NSLog(@"Touch %@", touch);
-//    NSLog(@"Tap count: %d", touch.tapCount);
+        //    NSLog(@"touchesMoved");
+        //    NSLog(@"Touches had %d touch objects in the set", [touches count]);
+        //    NSLog(@"Touch %@", touch);
+        //    NSLog(@"Tap count: %d", touch.tapCount);
     if (self.pieceBeingMoved != nil) {
         UITouch *touch = touches.anyObject;
         CGPoint currentPosition = [touch locationInView:self];
-//        [UIView animateWithDuration:0.5 animations:^{
+            //        [UIView animateWithDuration:0.5 animations:^{
         self.pieceBeingMoved.center = currentPosition;
-//        }];
-//        NSLog(@"TOUCH: Now at [%f,%f]", currentPosition.x, currentPosition.y);
+            //        }];
+            //        NSLog(@"TOUCH: Now at [%f,%f]", currentPosition.x, currentPosition.y);
     }
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = touches.anyObject;
-//    NSLog(@"Touches had %d touch objects in the set", [touches count]);
-//    NSLog(@"Touch %@", touch);
+        //    NSLog(@"Touches had %d touch objects in the set", [touches count]);
+        //    NSLog(@"Touch %@", touch);
     CGPoint currentPosition = [touch locationInView:self];
-//    NSLog(@"TOUCH END at [%f,%f]", currentPosition.x, currentPosition.y);
-//    NSLog(@"TOUCH: Tap count: %d", touch.tapCount);
+        //    NSLog(@"TOUCH END at [%f,%f]", currentPosition.x, currentPosition.y);
+        //    NSLog(@"TOUCH: Tap count: %d", touch.tapCount);
     if (self.pieceBeingMoved != nil) {
-        // piece still has original X, Y coordinates - use this combination
-        // to create a move object and see if it's valid by the gameboard
+            // piece still has original X, Y coordinates - use this combination
+            // to create a move object and see if it's valid by the gameboard
         GameMove *proposedMove = [[GameMove alloc] init];
         proposedMove.fromX = pieceBeingMoved.X;
         proposedMove.fromY = pieceBeingMoved.Y;
@@ -269,21 +228,17 @@
         proposedMove.toY = floor(currentPosition.y / squaresize);
         
         if ([self.board isValidMove:proposedMove]) {            
-//        }
-//        if ([self pieceAtCGPoint:currentPosition] == nil) {
-            // checking to make sure nothing is there now
             [self movePiece:pieceBeingMoved withMove:proposedMove];
                 // update the game board object with the new move
             GameBoard *newBoard = [self.board makeMove:proposedMove];
             self.board = newBoard;
         } else {
-            //invalid move - animate piece reverting...
+                //invalid move - animate piece reverting...
             [UIView animateWithDuration:0.5 animations:^{
                 self.pieceBeingMoved.center = [self centerForGamePositionX:pieceBeingMoved.X Y:pieceBeingMoved.Y];
             }];
         }
     }
-//    NSLog(@"--------------------------------");
     self.pieceBeingMoved = nil;
 }
 
@@ -296,7 +251,7 @@
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-        // touches cancelled
-        // clean up - animate back to starting position
+    self.pieceBeingMoved.center = [self centerForGamePositionX:pieceBeingMoved.X Y:pieceBeingMoved.Y];
+    self.pieceBeingMoved = nil;
 }
 @end

@@ -1,18 +1,15 @@
-//
-//  constants.h
-//  boardtest
-//
-//  Created by Joseph Heck on 8/21/11.
-//  Copyright (c) 2011 Deallus Software. All rights reserved.
-//
+    //
+    //  constants.h
+    //  boardtest
+    //
+    //  Created by Joseph Heck on 8/21/11.
+    //  Copyright (c) 2011 Deallus Software. All rights reserved.
+    //
 
 #ifndef boardtest_constants_h
 #define boardtest_constants_h
 
-
-
-
-// values
+    // values
 #define CFG_PIECEVAL_PAWN    2.5
 #define CFG_PIECEVAL_ROOK    6.0
 #define CFG_PIECEVAL_KNIGHT  4.0
@@ -37,7 +34,7 @@ enum Type
 #define BOARD_WIDTH          11
 #define BOARD_HEIGHT         11
 
-// consistent calculation of array position from x and y
+    // consistent calculation of array position from x and y
 #define positionXY x+y*BOARD_HEIGHT
 
 /*
@@ -53,7 +50,7 @@ enum Type
  
  key ^= randnums[location.x()][location.y()][type_ndx];
  }
-*/
+ */
 
 /*
  const int BOARD_SIZE = 8 * 8;   // size of chess board
