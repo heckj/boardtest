@@ -35,7 +35,7 @@
     
     for (int x=0; x<BOARD_WIDTH; x++) {
         for (int y=0; y<BOARD_HEIGHT; y++) {
-            int position = x+y*BOARD_HEIGHT;
+            int position = position(x,y);
             [gridcells addObject:[NSNumber numberWithInt:startingGameBoard[position]]];
         }
     }
@@ -44,8 +44,8 @@
 }
 
 -(NSNumber *)pieceAtX: (int) x Y: (int) y {
-    int position = positionXY;
-    NSNumber *piece = [boardPositions objectAtIndex:position];
+    int position = position(x,y);
+    NSNumber *piece = [self.boardPositions objectAtIndex:position];
     return piece;
 }
 
@@ -57,7 +57,9 @@
 -(BOOL) isValidMove: (GameMove *)move {
         // TODO: check to make sure that the player owns the piece
         // about to be moved!
-    
+    if ( (move.toX < 0) || (move.toX > 10) || (move.toY < 0) || (move.toY > 10) ) {
+        return NO;
+    }
     if ([[self pieceAtX:move.toX Y:move.toY] intValue] != 0) {
             //another piece is at that location - not a valid move
         return NO;
@@ -73,7 +75,7 @@
         if (move.fromY > move.toY) { // from=6, to=3
                 // moving DOWN y axis
             for (int ypos=move.toY; ypos < move.fromY; ypos++) {
-                int position = move.fromX+ypos*11;
+                int position = position(move.fromX,ypos);
                 if ([[self.boardPositions objectAtIndex:position] intValue] != 0) {
                     return NO;
                 }
@@ -82,7 +84,7 @@
         } else {
                 // moving UP y axis from=3, to=6
             for (int ypos=move.toY; ypos > move.fromY; ypos--) {
-                int position = move.fromX+ypos*11;
+                int position = position(move.fromX,ypos);
                 if ([[self.boardPositions objectAtIndex:position] intValue] != 0) {
                     return NO;
                 }
@@ -94,7 +96,7 @@
         if (move.fromX > move.toX) { // from=6, to=3
                                      // moving DOWN x axis
             for (int xpos=move.toX; xpos < move.fromX; xpos++) {
-                int position = xpos+move.fromY*11;
+                int position = position(xpos,move.fromY);
                 if ([[self.boardPositions objectAtIndex:position] intValue] != 0) {
                     return NO;
                 }
@@ -103,7 +105,7 @@
         } else {
                 // moving UP X axis from=3, to=6
             for (int xpos=move.toX; xpos > move.fromX; xpos--) {
-                int position = xpos+move.fromY*11;
+                int position = position(xpos,move.fromY);
                 if ([[self.boardPositions objectAtIndex:position] intValue] != 0) {
                     return NO;
                 }
@@ -120,8 +122,8 @@
         GameBoard *newBoard = [[GameBoard alloc] init];
             // initialize with existing piece structure
         NSMutableArray *newArray = [NSMutableArray arrayWithArray:self.boardPositions];
-        int oldposition = move.fromX+move.fromY*BOARD_HEIGHT;
-        int newposition = move.toX+move.toY*BOARD_HEIGHT;
+        int oldposition = position(move.fromX, move.fromY);
+        int newposition = position(move.toX, move.toY);
         NSNumber *pieceGettingMoved = [newArray objectAtIndex:oldposition];
         [newArray replaceObjectAtIndex:oldposition withObject:[NSNumber numberWithInt:0]];
         [newArray replaceObjectAtIndex:newposition withObject:pieceGettingMoved];

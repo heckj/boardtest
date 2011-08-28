@@ -109,7 +109,7 @@
         // add the subviews that make up the background of the board
     for (int y=0; y<BOARD_HEIGHT; y++) {
         for (int x=0; x<BOARD_WIDTH; x++) {
-            int position = positionXY;
+            int position = position(x,y);
             NSString *cell_image = [NSString stringWithString:@"wood_red_64.png"];
             if ((position % 2)==0) {
                 cell_image = [NSString stringWithString:@"wood_light_64.png"];
@@ -133,7 +133,7 @@
     UIImage *blackPieceImage = [UIImage imageNamed:@"ball-black.png"];
     for (int y=0; y<BOARD_HEIGHT; y++) {
         for (int x=0; x<BOARD_WIDTH; x++) {
-            int position = positionXY;
+            int position = position(x,y);
             
             NSNumber *piecetype = [self.board.boardPositions objectAtIndex:position];
             if ([piecetype intValue]>0) {

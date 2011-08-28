@@ -35,7 +35,7 @@ enum Type
 #define BOARD_HEIGHT         11
 
     // consistent calculation of array position from x and y
-#define positionXY x+y*BOARD_HEIGHT
+#define position(x,y) x+y*BOARD_HEIGHT
 
 /*
  void Zobrist::key(const BoardSlot &slot,
