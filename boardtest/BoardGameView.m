@@ -19,6 +19,8 @@
 @synthesize startMovePosition;
 @synthesize pieceBeingMoved;
 
+@synthesize pieceSelected;
+
 /*
  * what piece is at location (x,y)
  * hit test to find piece from touch
@@ -238,8 +240,58 @@
                 self.pieceBeingMoved.center = [self centerForGamePositionX:pieceBeingMoved.X Y:pieceBeingMoved.Y];
             }];
         }
+        self.pieceBeingMoved = nil;
     }
-    self.pieceBeingMoved = nil;
+    
+    if (self.pieceSelected == nil) {
+        if ( ((abs(round(self.startMovePosition.x-currentPosition.x))) < 3) && 
+            ((abs(round(self.startMovePosition.y-currentPosition.y))) < 3) && 
+            (touch.tapCount == 1) ) {
+                // didn't move between touchesBegn and touchesEnded
+                // just tapped... so select the piece at that location
+            self.pieceSelected = [self pieceAtCGPoint:self.startMovePosition];
+                // NOW we want to show off the valid moves that are available
+                // to this piece - highlighting them or something....
+        }
+    } else {
+            // a piece was already selected 
+        int x = floor(self.startMovePosition.x / squaresize);
+        int y = floor(self.startMovePosition.y / squaresize);
+        int selected_pieces_x = self.pieceSelected.X;
+        int selected_pieces_y = self.pieceSelected.Y;
+        
+        if ( (x == selected_pieces_x) && (y == selected_pieces_y) ) {
+                // same location, deselect the piece
+            self.pieceSelected = nil;
+        } else {
+                // different location, attempt move
+            GameMove *proposedMove = [[GameMove alloc] init];
+            proposedMove.fromX = pieceSelected.X;
+            proposedMove.fromY = pieceSelected.Y;
+            proposedMove.toX = floor(currentPosition.x / squaresize);
+            proposedMove.toY = floor(currentPosition.y / squaresize);
+            
+            if ([self.board isValidMove:proposedMove]) {
+                    // animate to a new location                
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.pieceSelected.center = [self centerForGamePositionX:proposedMove.toX Y:proposedMove.toY];
+                }];
+                    // update the pieces and local data arrays
+                [self movePiece:pieceSelected withMove:proposedMove];
+                    // update the game board object with the new move
+                GameBoard *newBoard = [self.board makeMove:proposedMove];
+                self.board = newBoard;
+            } 
+                //else invalid move
+            self.pieceSelected = nil;
+        }
+            
+            //what happens when we piece is selected, tapped in new location...
+            // proposing move ? deselecting piece ? 
+            //Does a second tap toggle the select ?
+    }
+        // IDEALLY we only allow the piece to be selected if it matches the current player
+    
 }
 
 - (void) movePiece:(BoardPiece *)piece withMove:(GameMove *)move {

@@ -20,8 +20,11 @@
 @property (strong, nonatomic) NSMutableArray *boardpieces;
 @property (nonatomic) float squaresize;
 
+    // used for tracking dragging on a board piece
 @property (nonatomic) CGPoint startMovePosition;
 @property (strong, nonatomic) BoardPiece *pieceBeingMoved; 
+    // used for selection of a piece
+@property (strong, nonatomic) BoardPiece *pieceSelected;
 
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
 - (BoardPiece *) pieceAtBoardLocationX: (int) x Y: (int) y;
