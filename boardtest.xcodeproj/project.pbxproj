@@ -43,6 +43,8 @@
 		1A9356B513FC4CA400B04DE1 /* wood_soft_light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AD13FC4CA400B04DE1 /* wood_soft_light.jpg */; };
 		1AC7F6D114004FD80072ADAB /* GitTagBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1AC7F6D014004FD80072ADAB /* GitTagBundleVersion.sh */; };
 		1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE0FD813FC547900C93597 /* Entitlements.plist */; };
+		1AD6A342140B029400C67337 /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD6A341140B029400C67337 /* icon_57.png */; };
+		1AD6A344140B029700C67337 /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD6A343140B029700C67337 /* icon_114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		1A9356AE13FC4CA400B04DE1 /* wood_soft_light_b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_soft_light_b.jpg; sourceTree = "<group>"; };
 		1AC7F6D014004FD80072ADAB /* GitTagBundleVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GitTagBundleVersion.sh; sourceTree = SOURCE_ROOT; };
 		1ACE0FD813FC547900C93597 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
+		1AD6A341140B029400C67337 /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57.png; sourceTree = "<group>"; };
+		1AD6A343140B029700C67337 /* icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 		1A93566113FC4C6400B04DE1 = {
 			isa = PBXGroup;
 			children = (
+				1AD6A343140B029700C67337 /* icon_114.png */,
+				1AD6A341140B029400C67337 /* icon_57.png */,
 				1A4DD73D140055F10042A3E9 /* testflightSDK */,
 				1A93567413FC4C6400B04DE1 /* boardtest */,
 				1A93569513FC4C6500B04DE1 /* boardtestTests */,
@@ -401,6 +407,8 @@
 				1A4A6585140162B100A45B7E /* ball-black.png in Resources */,
 				1A4A658B140162B100A45B7E /* ball-red.png in Resources */,
 				1A4A658C140162B100A45B7E /* ball-white.png in Resources */,
+				1AD6A342140B029400C67337 /* icon_57.png in Resources */,
+				1AD6A344140B029700C67337 /* icon_114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
