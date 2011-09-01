@@ -52,6 +52,7 @@
 -(BOOL) isValidMove: (GameMove *)move;
 -(GameBoard *)makeMove: (GameMove *)move; //returns a new gameboard
 -(float)evaluate: (Player *)player;
+-(NSArray *) validMovesForPlayer: (Player *) atX: (int) x Y: (int) y;
 
 -(BOOL)isGameOver;
 

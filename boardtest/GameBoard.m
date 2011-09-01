@@ -49,6 +49,10 @@
     return piece;
 }
 
+-(NSArray *) validMovesForPlayer: (Player *) atX: (int) x Y: (int) y {
+    NSMutableArray *moves = [[NSMutableArray alloc] init];
+    return moves;
+}
 -(GameMove *) getMoves {
         // returns list of GameMove objects
     return Nil;
