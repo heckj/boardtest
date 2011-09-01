@@ -41,6 +41,8 @@
 		1A9356B113FC4CA400B04DE1 /* wood_light_light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356A913FC4CA400B04DE1 /* wood_light_light.jpg */; };
 		1A9356B313FC4CA400B04DE1 /* wood_red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AB13FC4CA400B04DE1 /* wood_red.jpg */; };
 		1A9356B513FC4CA400B04DE1 /* wood_soft_light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A9356AD13FC4CA400B04DE1 /* wood_soft_light.jpg */; };
+		1AC35ECA140F1A7900D24ABA /* gloweffect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC35EC8140F1A7900D24ABA /* gloweffect_iphone.png */; };
+		1AC35ECB140F1A7900D24ABA /* gloweffect_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC35EC9140F1A7900D24ABA /* gloweffect_ipad.png */; };
 		1AC7F6D114004FD80072ADAB /* GitTagBundleVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1AC7F6D014004FD80072ADAB /* GitTagBundleVersion.sh */; };
 		1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE0FD813FC547900C93597 /* Entitlements.plist */; };
 		1AD6A342140B029400C67337 /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD6A341140B029400C67337 /* icon_57.png */; };
@@ -124,6 +126,8 @@
 		1A9356AC13FC4CA400B04DE1 /* wood_red_b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_red_b.jpg; sourceTree = "<group>"; };
 		1A9356AD13FC4CA400B04DE1 /* wood_soft_light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_soft_light.jpg; sourceTree = "<group>"; };
 		1A9356AE13FC4CA400B04DE1 /* wood_soft_light_b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_soft_light_b.jpg; sourceTree = "<group>"; };
+		1AC35EC8140F1A7900D24ABA /* gloweffect_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gloweffect_iphone.png; sourceTree = "<group>"; };
+		1AC35EC9140F1A7900D24ABA /* gloweffect_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gloweffect_ipad.png; sourceTree = "<group>"; };
 		1AC7F6D014004FD80072ADAB /* GitTagBundleVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GitTagBundleVersion.sh; sourceTree = SOURCE_ROOT; };
 		1ACE0FD813FC547900C93597 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		1AD6A341140B029400C67337 /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57.png; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		1A4DD746140058D50042A3E9 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				1AC35EC8140F1A7900D24ABA /* gloweffect_iphone.png */,
+				1AC35EC9140F1A7900D24ABA /* gloweffect_ipad.png */,
 				1A4A6570140162B100A45B7E /* Balls */,
 				1A4A6579140162B100A45B7E /* Gingko */,
 				1A4A657F140162B100A45B7E /* Green Ball.png */,
@@ -409,6 +415,8 @@
 				1A4A658C140162B100A45B7E /* ball-white.png in Resources */,
 				1AD6A342140B029400C67337 /* icon_57.png in Resources */,
 				1AD6A344140B029700C67337 /* icon_114.png in Resources */,
+				1AC35ECA140F1A7900D24ABA /* gloweffect_iphone.png in Resources */,
+				1AC35ECB140F1A7900D24ABA /* gloweffect_ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
