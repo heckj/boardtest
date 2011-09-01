@@ -50,7 +50,67 @@
 }
 
 -(NSArray *) validMovesForPlayer: (Player *) atX: (int) x Y: (int) y {
+    /*
+     * returns an NSArray of GameMove objects
+     */
     NSMutableArray *moves = [[NSMutableArray alloc] init];
+        /*
+         * iterate north, south, east, and west - any open slot is 
+         * a valid potential move. Test and if valid (unoccupied),
+         * add to moves array
+         */
+    for (int xpos = x; xpos < MAX_X; xpos++) {
+            // go east young man
+        if ([[self pieceAtX:xpos Y:y] intValue] != 0) {
+                //another piece is here, break the loop
+            xpos = MAX_X;
+        } else {
+                // valid location - make a move an add it to the list
+            GameMove *newMove = [[GameMove alloc] init];
+            newMove.fromX = x; newMove.fromY = y;
+            newMove.toX = xpos; newMove.toY = y;
+            [moves addObject:newMove];
+        }
+    }
+    for (int xpos = x; xpos > MIN_X; xpos--) {
+            // go west young man
+        if ([[self pieceAtX:xpos Y:y] intValue] != 0) {
+                //another piece is here, break the loop
+            xpos = MIN_X;
+        } else {
+                // valid location - make a move an add it to the list
+            GameMove *newMove = [[GameMove alloc] init];
+            newMove.fromX = x; newMove.fromY = y;
+            newMove.toX = xpos; newMove.toY = y;
+            [moves addObject:newMove];
+        }
+    }
+    for (int ypos = y; ypos < MAX_Y; ypos++) {
+            // go south young man
+        if ([[self pieceAtX:x Y:ypos] intValue] != 0) {
+                //another piece is here, break the loop
+            ypos = MAX_Y;
+        } else {
+                // valid location - make a move an add it to the list
+            GameMove *newMove = [[GameMove alloc] init];
+            newMove.fromX = x; newMove.fromY = y;
+            newMove.toX = x; newMove.toY = ypos;
+            [moves addObject:newMove];
+        }
+    }
+    for (int ypos = y; ypos > MIN_Y; ypos--) {
+            // go south young man
+        if ([[self pieceAtX:x Y:ypos] intValue] != 0) {
+                //another piece is here, break the loop
+            ypos = MIN_Y;
+        } else {
+                // valid location - make a move an add it to the list
+            GameMove *newMove = [[GameMove alloc] init];
+            newMove.fromX = x; newMove.fromY = y;
+            newMove.toX = x; newMove.toY = ypos;
+            [moves addObject:newMove];
+        }
+    }
     return moves;
 }
 -(GameMove *) getMoves {
@@ -61,7 +121,7 @@
 -(BOOL) isValidMove: (GameMove *)move {
         // TODO: check to make sure that the player owns the piece
         // about to be moved!
-    if ( (move.toX < 0) || (move.toX > 10) || (move.toY < 0) || (move.toY > 10) ) {
+    if ( (move.toX < MIN_X) || (move.toX > MAX_X) || (move.toY < MIN_Y) || (move.toY > MAX_Y) ) {
         return NO;
     }
     if ([[self pieceAtX:move.toX Y:move.toY] intValue] != 0) {

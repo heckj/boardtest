@@ -33,6 +33,10 @@ enum Type
 
 #define BOARD_WIDTH          11
 #define BOARD_HEIGHT         11
+#define MIN_X                0
+#define MIN_Y                0
+#define MAX_X                BOARD_WIDTH-1
+#define MAX_Y                BOARD_HEIGHT-1
 
     // consistent calculation of array position from x and y
 #define position(x,y) x+y*BOARD_HEIGHT
