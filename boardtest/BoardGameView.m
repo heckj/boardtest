@@ -114,7 +114,7 @@
             if ((position % 2)==0) {
                 cell_image = [NSString stringWithString:@"wood_light_64.png"];
             }            
-            UIImageView *gridcell = [[UIImageView alloc] initWithImage:[UIImage imageNamed:cell_image]];
+            GridCell *gridcell = [[GridCell alloc] initWithImage:[UIImage imageNamed:cell_image]];
                 // keep a handy reference to those subviews in an array...
             [newArray insertObject:gridcell atIndex:position];
             [self addSubview:gridcell];

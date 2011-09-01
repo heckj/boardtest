@@ -12,6 +12,7 @@
 #import "GameMove.h"
 #import "constants.h"
 #import "BoardPiece.h"
+#import "GridCell.h"
 
 @interface BoardGameView : UIView
 

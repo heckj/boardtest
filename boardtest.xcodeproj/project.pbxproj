@@ -47,6 +47,8 @@
 		1ACE0FD913FC547900C93597 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE0FD813FC547900C93597 /* Entitlements.plist */; };
 		1AD6A342140B029400C67337 /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD6A341140B029400C67337 /* icon_57.png */; };
 		1AD6A344140B029700C67337 /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD6A343140B029700C67337 /* icon_114.png */; };
+		1AE30E13140F1E610072B8B8 /* GridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE30E12140F1E610072B8B8 /* GridCell.m */; };
+		1AE30E16140F1F0D0072B8B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE30E15140F1F0D0072B8B8 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,9 @@
 		1ACE0FD813FC547900C93597 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = SOURCE_ROOT; };
 		1AD6A341140B029400C67337 /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57.png; sourceTree = "<group>"; };
 		1AD6A343140B029700C67337 /* icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114.png; sourceTree = "<group>"; };
+		1AE30E11140F1E610072B8B8 /* GridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridCell.h; sourceTree = "<group>"; };
+		1AE30E12140F1E610072B8B8 /* GridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridCell.m; sourceTree = "<group>"; };
+		1AE30E15140F1F0D0072B8B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE30E16140F1F0D0072B8B8 /* CoreGraphics.framework in Frameworks */,
 				1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */,
 				1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */,
 				1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */,
@@ -243,6 +249,7 @@
 		1A93566F13FC4C6400B04DE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AE30E15140F1F0D0072B8B8 /* CoreGraphics.framework */,
 				1A65A013140062E000BA36D6 /* QuartzCore.framework */,
 				1A93567013FC4C6400B04DE1 /* UIKit.framework */,
 				1A93567213FC4C6400B04DE1 /* Foundation.framework */,
@@ -255,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				1A4A656E1401515B00A45B7E /* constants.h */,
+				1AE30E11140F1E610072B8B8 /* GridCell.h */,
+				1AE30E12140F1E610072B8B8 /* GridCell.m */,
 				1A4E66D8140963EC0014D541 /* BoardPiece.h */,
 				1A4E66D9140963EC0014D541 /* BoardPiece.m */,
 				1A93567D13FC4C6500B04DE1 /* AppDelegate.h */,
@@ -472,6 +481,7 @@
 				1A49E13514009E4E0033963B /* GameMove.m in Sources */,
 				1A49E1391400A0040033963B /* Player.m in Sources */,
 				1A4E66DA140963EC0014D541 /* BoardPiece.m in Sources */,
+				1AE30E13140F1E610072B8B8 /* GridCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
