@@ -26,6 +26,7 @@
 @property (strong, nonatomic) BoardPiece *pieceBeingMoved; 
     // used for selection of a piece
 @property (strong, nonatomic) BoardPiece *pieceSelected;
+@property (strong, nonatomic) NSArray *validMoves;
 
 - (CGPoint) centerForGamePositionX: (int) x Y: (int) y;
 - (BoardPiece *) pieceAtBoardLocationX: (int) x Y: (int) y;

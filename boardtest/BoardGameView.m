@@ -20,7 +20,7 @@
 @synthesize pieceBeingMoved;
 
 @synthesize pieceSelected;
-
+@synthesize validMoves;
 /*
  * what piece is at location (x,y)
  * hit test to find piece from touch
@@ -54,6 +54,18 @@
         }
     }
     return nil;
+}
+
+- (GridCell *) gridCellAtBoardLocationX: (int) x Y: (int) y {
+    NSInteger arrayposition = position(x, y);
+    return [self.gridcells objectAtIndex:arrayposition];
+}
+
+- (GridCell *) gridCellAtGGPoint: (CGPoint) point {
+    int x = floor(point.x / squaresize);
+    int y = floor(point.y / squaresize);
+    return [self gridCellAtBoardLocationX:x Y:y];
+    
 }
 
 - (BoardPiece *) pieceAtCGPoint: (CGPoint) point {
@@ -249,9 +261,36 @@
             (touch.tapCount == 1) ) {
                 // didn't move between touchesBegn and touchesEnded
                 // just tapped... so select the piece at that location
-            self.pieceSelected = [self pieceAtCGPoint:self.startMovePosition];
-                // NOW we want to show off the valid moves that are available
-                // to this piece - highlighting them or something....
+            BoardPiece *foo = [self pieceAtCGPoint:self.startMovePosition];
+            if (board.currentPlayer == ATTACKING_PLAYER) {
+                if ([foo.piecetype intValue] == ATTACKER) {
+                        // now we can select the piece
+                    self.pieceSelected = [self pieceAtCGPoint:self.startMovePosition];
+                    
+                    GridCell *piecesCell = [self gridCellAtGGPoint:self.startMovePosition];
+                    [piecesCell glowOn];
+                    
+                    self.validMoves = [self.board validMovesForPlayerAtX:pieceSelected.X Y:pieceSelected.Y];
+                    for ( GameMove *move in validMoves) {
+                        [[self gridCellAtBoardLocationX:move.toX Y:move.toY] glowOn];
+                    }
+                }
+            } else {
+                if ( ([foo.piecetype intValue] == DEFENDER) || 
+                    ([foo.piecetype intValue] == KING) ) {
+                        // now we can select the piece
+                        self.pieceSelected = [self pieceAtCGPoint:self.startMovePosition];
+                        
+                        GridCell *piecesCell = [self gridCellAtGGPoint:self.startMovePosition];
+                        [piecesCell glowOn];
+                        
+                        self.validMoves = [self.board validMovesForPlayerAtX:pieceSelected.X Y:pieceSelected.Y];
+                        for ( GameMove *move in validMoves) {
+                            [[self gridCellAtBoardLocationX:move.toX Y:move.toY] glowOn];
+                        }
+                }
+                
+            }
         }
     } else {
             // a piece was already selected 
@@ -262,7 +301,13 @@
         
         if ( (x == selected_pieces_x) && (y == selected_pieces_y) ) {
                 // same location, deselect the piece
+            GridCell *piecesCell = [self gridCellAtGGPoint:self.startMovePosition];
+            [piecesCell glowOff];
+            for ( GameMove *move in self.validMoves) {
+                [[self gridCellAtBoardLocationX:move.toX Y:move.toY] glowOff];
+            }
             self.pieceSelected = nil;
+            self.validMoves =  nil;
         } else {
                 // different location, attempt move
             GameMove *proposedMove = [[GameMove alloc] init];
@@ -283,15 +328,16 @@
                 self.board = newBoard;
             } 
                 //else invalid move
+                //  regardless, turn off glow and deselect.
+            GridCell *piecesCell = [self gridCellAtBoardLocationX:proposedMove.fromX Y:proposedMove.fromY];
+            [piecesCell glowOff];
+            for ( GameMove *move in self.validMoves) {
+                [[self gridCellAtBoardLocationX:move.toX Y:move.toY] glowOff];
+            }
             self.pieceSelected = nil;
-        }
-            
-            //what happens when we piece is selected, tapped in new location...
-            // proposing move ? deselecting piece ? 
-            //Does a second tap toggle the select ?
-    }
-        // IDEALLY we only allow the piece to be selected if it matches the current player
-    
+            self.validMoves =  nil;
+        }            
+    }    
 }
 
 - (void) movePiece:(BoardPiece *)piece withMove:(GameMove *)move {
