@@ -40,6 +40,7 @@
         }
     }
     self.boardPositions = (NSArray *)gridcells;
+    self.currentPlayer = ATTACKING_PLAYER;
     
 }
 
@@ -49,7 +50,7 @@
     return piece;
 }
 
--(NSArray *) validMovesForPlayer: (Player *) atX: (int) x Y: (int) y {
+-(NSArray *) validMovesForPlayerAtX: (int) x Y: (int) y {
     /*
      * returns an NSArray of GameMove objects
      */
@@ -114,13 +115,28 @@
     return moves;
 }
 -(GameMove *) getMoves {
-        // returns list of GameMove objects
+        // returns an NSArray of GameMove objects
     return Nil;
 }
 
 -(BOOL) isValidMove: (GameMove *)move {
         // TODO: check to make sure that the player owns the piece
         // about to be moved!
+    NSInteger gamepiecevalue = [[self pieceAtX:move.fromX Y:move.fromY] intValue];
+    if (self.currentPlayer == ATTACKING_PLAYER) {
+        if ((gamepiecevalue == DEFENDER) || 
+            (gamepiecevalue == KING) ||
+            (gamepiecevalue == EMPTY)
+            ) {
+            return NO;
+        }
+    } else {
+        if ((gamepiecevalue == ATTACKER) || 
+            (gamepiecevalue == EMPTY)
+            ) {
+            return NO;
+        }
+    }
     if ( (move.toX < MIN_X) || (move.toX > MAX_X) || (move.toY < MIN_Y) || (move.toY > MAX_Y) ) {
         return NO;
     }
@@ -194,13 +210,18 @@
         newBoard.boardPositions = newArray;
             // TODO: deal with any captures...
             // TODO: change player to other player
+        if (self.currentPlayer == ATTACKING_PLAYER) {
+            newBoard.currentPlayer = DEFENDING_PLAYER;
+        } else {
+            newBoard.currentPlayer = ATTACKING_PLAYER;
+        }
         return newBoard;
     }
         // move isn't valid - return nil
     return Nil;
 }
 
--(float)evaluate: (Player *)player {
+-(float)evaluate: (NSInteger)player {
     return 0.0;
 }
 

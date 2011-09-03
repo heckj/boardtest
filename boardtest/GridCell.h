@@ -15,5 +15,7 @@
 @property (strong, nonatomic) CALayer *glowLayer;
 @property (strong, nonatomic) CABasicAnimation *pulseAnimation;
 
+- (void) glowOn;
+- (void) glowOff;
 
 @end
