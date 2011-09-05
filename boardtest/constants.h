@@ -9,27 +9,26 @@
 #ifndef boardtest_constants_h
 #define boardtest_constants_h
 
-    // values
-#define CFG_PIECEVAL_PAWN    2.5
-#define CFG_PIECEVAL_ROOK    6.0
-#define CFG_PIECEVAL_KNIGHT  4.0
-#define CFG_PIECEVAL_BISHOP  5.0
-#define CFG_PIECEVAL_QUEEN   10.0
-#define CFG_PIECEVAL_KING    10000.0
-#define CFG_PIECEVAL_NONE    0.0
-#define CFG_GAMEVAL_WIN      10000.0
-#define CFG_GAMEVAL_LOSE     -10000.0
-
-enum Type
-{
-    None = 0,
-    Pawn = 1,
-    Rook = 2,
-    Knight = 3,
-    Bishop = 4,
-    Queen = 5,
-    King = 6
-};
+//#define CFG_PIECEVAL_PAWN    2.5
+//#define CFG_PIECEVAL_ROOK    6.0
+//#define CFG_PIECEVAL_KNIGHT  4.0
+//#define CFG_PIECEVAL_BISHOP  5.0
+//#define CFG_PIECEVAL_QUEEN   10.0
+//#define CFG_PIECEVAL_KING    10000.0
+//#define CFG_PIECEVAL_NONE    0.0
+//#define CFG_GAMEVAL_WIN      10000.0
+//#define CFG_GAMEVAL_LOSE     -10000.0
+//
+//enum Type
+//{
+//    None = 0,
+//    Pawn = 1,
+//    Rook = 2,
+//    Knight = 3,
+//    Bishop = 4,
+//    Queen = 5,
+//    King = 6
+//};
 
 #define BOARD_WIDTH          11
 #define BOARD_HEIGHT         11
