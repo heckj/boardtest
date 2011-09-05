@@ -13,6 +13,8 @@
 
 @interface boardtestTests : SenTestCase
 
-- (void)testGameBoardPieces;
+- (void)testInitialGameBoardPieces;
+- (void)testInvalidMoveEmpty;
+- (void)testValidMoveAttacker;
 
 @end

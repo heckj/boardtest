@@ -244,7 +244,7 @@
         if ([self.board isValidMove:proposedMove]) {            
             [self movePiece:pieceBeingMoved withMove:proposedMove];
                 // update the game board object with the new move
-            GameBoard *newBoard = [self.board makeMove:proposedMove];
+            GameBoard *newBoard = [self.board executeMove:proposedMove];
             self.board = newBoard;
         } else {
                 //invalid move - animate piece reverting...
@@ -324,7 +324,7 @@
                     // update the pieces and local data arrays
                 [self movePiece:pieceSelected withMove:proposedMove];
                     // update the game board object with the new move
-                GameBoard *newBoard = [self.board makeMove:proposedMove];
+                GameBoard *newBoard = [self.board executeMove:proposedMove];
                 self.board = newBoard;
             } 
                 //else invalid move

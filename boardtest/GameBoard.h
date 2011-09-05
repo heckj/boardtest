@@ -23,8 +23,8 @@
 
     // 11x11 hnefatafl board
 /*
- 0   1   2   3   4   5   6   7   8   9   10
- 
+ .... 0   1   2   3   4   5   6   7   8   9   10
+ ..
  .. +---+---+---+---+---+---+---+---+---+---+---+
  0  | X |   |   | A | A | A | A | A |   |   | X |
  .. +---+---+---+---+---+---+---+---+---+---+---+
@@ -58,7 +58,7 @@
 -(NSNumber *)pieceAtX: (int) x Y: (int) y;
 -(GameMove *) getMoves; // returns list of GameMove objects
 -(BOOL) isValidMove: (GameMove *)move;
--(GameBoard *)makeMove: (GameMove *)move; //returns a new gameboard
+-(GameBoard *)executeMove: (GameMove *)move; //returns a new gameboard
 -(float)evaluate: (NSInteger) player;
 -(NSArray *) validMovesForPlayerAtX: (int) x Y: (int) y;
 

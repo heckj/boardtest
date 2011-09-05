@@ -200,7 +200,7 @@
     return NO;
 }
 
--(GameBoard *)makeMove: (GameMove *)move {
+-(GameBoard *)executeMove: (GameMove *)move {
     if ([self isValidMove:move]) {
             // create a new board
         GameBoard *newBoard = [[GameBoard alloc] init];
