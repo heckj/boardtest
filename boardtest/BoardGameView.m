@@ -122,9 +122,9 @@
     for (int y=0; y<BOARD_HEIGHT; y++) {
         for (int x=0; x<BOARD_WIDTH; x++) {
             int position = position(x,y);
-            NSString *cell_image = [NSString stringWithString:@"wood_red_64.png"];
+            NSString *cell_image = @"wood_red_64.png";
             if ((position % 2)==0) {
-                cell_image = [NSString stringWithString:@"wood_light_64.png"];
+                cell_image = @"wood_light_64.png";
             }            
             GridCell *gridcell = [[GridCell alloc] initWithImage:[UIImage imageNamed:cell_image]];
                 // keep a handy reference to those subviews in an array...
