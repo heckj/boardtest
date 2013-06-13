@@ -32,8 +32,8 @@
     if (self.pulseAnimation == nil) {
         self.pulseAnimation =[CABasicAnimation animationWithKeyPath:@"opacity"];
         pulseAnimation.duration = 1;
-        pulseAnimation.fromValue = [NSNumber numberWithFloat:0.0];
-        pulseAnimation.toValue = [NSNumber numberWithFloat:1.0];
+        pulseAnimation.fromValue = @0.0f;
+        pulseAnimation.toValue = @1.0f;
         pulseAnimation.delegate = self;
         pulseAnimation.autoreverses = YES;
         pulseAnimation.repeatCount = 4000; // really big number...

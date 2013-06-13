@@ -58,7 +58,7 @@
 
 - (GridCell *) gridCellAtBoardLocationX: (int) x Y: (int) y {
     NSInteger arrayposition = position(x, y);
-    return [self.gridcells objectAtIndex:arrayposition];
+    return (self.gridcells)[arrayposition];
 }
 
 - (GridCell *) gridCellAtGGPoint: (CGPoint) point {
@@ -147,7 +147,7 @@
         for (int x=0; x<BOARD_WIDTH; x++) {
             int position = position(x,y);
             
-            NSNumber *piecetype = [self.board.boardPositions objectAtIndex:position];
+            NSNumber *piecetype = (self.board.boardPositions)[position];
             if ([piecetype intValue]>0) {
                 BoardPiece *newpiece = [[BoardPiece alloc] initWithImage:whitePieceImage];
                 if ([piecetype intValue] == 2) {
@@ -185,7 +185,7 @@
 - (void)logViewStrucure {
     NSLog(@"SUBVIEWS...");
     for (int ii=0; ii < [self.subviews count]; ii++){
-        UIView *aView = [self.subviews objectAtIndex:ii];
+        UIView *aView = (self.subviews)[ii];
         NSLog(@"view[%d]:  %@", ii, aView);
     }
 }
