@@ -20,6 +20,7 @@
 		1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4DD747140058D50042A3E9 /* testflighticon.png */; };
 		1A4E66DA140963EC0014D541 /* BoardPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E66D9140963EC0014D541 /* BoardPiece.m */; };
 		1A51ED8614005DBB000E29E7 /* BoardGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51ED8514005DBB000E29E7 /* BoardGameView.m */; };
+		1A579432176AC5BF00409768 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A579431176AC5BF00409768 /* Default-568h@2x.png */; };
 		1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65A013140062E000BA36D6 /* QuartzCore.framework */; };
 		1A70771D14007183007E812E /* wood_red_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771B14007183007E812E /* wood_red_64.png */; };
 		1A70771E14007183007E812E /* wood_light_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771C14007183007E812E /* wood_light_64.png */; };
@@ -97,6 +98,7 @@
 		1A4E66D9140963EC0014D541 /* BoardPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardPiece.m; sourceTree = "<group>"; };
 		1A51ED8414005DBB000E29E7 /* BoardGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameView.h; sourceTree = "<group>"; };
 		1A51ED8514005DBB000E29E7 /* BoardGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameView.m; sourceTree = "<group>"; };
+		1A579431176AC5BF00409768 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1A65A013140062E000BA36D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A70771B14007183007E812E /* wood_red_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_red_64.png; sourceTree = "<group>"; };
 		1A70771C14007183007E812E /* wood_light_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_light_64.png; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		1A93566113FC4C6400B04DE1 = {
 			isa = PBXGroup;
 			children = (
+				1A579431176AC5BF00409768 /* Default-568h@2x.png */,
 				1AD6A343140B029700C67337 /* icon_114.png */,
 				1AD6A341140B029400C67337 /* icon_57.png */,
 				1A4DD73D140055F10042A3E9 /* testflightSDK */,
@@ -380,7 +383,7 @@
 		1A93566313FC4C6400B04DE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Deallus Software";
 			};
 			buildConfigurationList = 1A93566613FC4C6400B04DE1 /* Build configuration list for PBXProject "boardtest" */;
@@ -426,6 +429,7 @@
 				1AD6A344140B029700C67337 /* icon_114.png in Resources */,
 				1AC35ECA140F1A7900D24ABA /* gloweffect_iphone.png in Resources */,
 				1AC35ECB140F1A7900D24ABA /* gloweffect_ipad.png in Resources */,
+				1A579432176AC5BF00409768 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +552,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -561,8 +569,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,14 +584,19 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -597,7 +611,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
@@ -615,7 +629,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
@@ -668,14 +682,19 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -693,7 +712,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
