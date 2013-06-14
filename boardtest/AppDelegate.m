@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TestFlight.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -18,8 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        // launch test flight data consolidator..
-    [TestFlight takeOff:@"f379106537a500b86238b11e7b7e933d_MjQ2MjcyMDExLTA4LTIwIDE2OjU1OjAwLjgxMTk4NQ"];
+
+    // set the local identifier for beta test only!
+    NSString * uniqId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    [TestFlight setDeviceIdentifier:uniqId];
+    // launch test flight data consolidator..
+    [TestFlight takeOff:@"a82b72a5-a25b-4635-90cb-a6f97785d10b"];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil]; 

@@ -16,10 +16,12 @@
 		1A4A6585140162B100A45B7E /* ball-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4A6571140162B100A45B7E /* ball-black.png */; };
 		1A4A658B140162B100A45B7E /* ball-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4A6577140162B100A45B7E /* ball-red.png */; };
 		1A4A658C140162B100A45B7E /* ball-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4A6578140162B100A45B7E /* ball-white.png */; };
-		1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4DD740140055F10042A3E9 /* libTestFlight.a */; };
 		1A4DD748140058D50042A3E9 /* testflighticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A4DD747140058D50042A3E9 /* testflighticon.png */; };
 		1A4E66DA140963EC0014D541 /* BoardPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E66D9140963EC0014D541 /* BoardPiece.m */; };
 		1A51ED8614005DBB000E29E7 /* BoardGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51ED8514005DBB000E29E7 /* BoardGameView.m */; };
+		1A5608DB176A95BF004CA39D /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5608D7176A95BF004CA39D /* libTestFlight.a */; };
+		1A5608DC176A95BF004CA39D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A5608D8176A95BF004CA39D /* README.md */; };
+		1A5608DD176A95BF004CA39D /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A5608D9176A95BF004CA39D /* release_notes.md */; };
 		1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65A013140062E000BA36D6 /* QuartzCore.framework */; };
 		1A70771D14007183007E812E /* wood_red_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771B14007183007E812E /* wood_red_64.png */; };
 		1A70771E14007183007E812E /* wood_light_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A70771C14007183007E812E /* wood_light_64.png */; };
@@ -88,15 +90,15 @@
 		1A4A6582140162B100A45B7E /* Stone-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stone-white.png"; sourceTree = "<group>"; };
 		1A4A6583140162B100A45B7E /* White Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "White Ball.png"; sourceTree = "<group>"; };
 		1A4A6584140162B100A45B7E /* Yellow Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yellow Ball.png"; sourceTree = "<group>"; };
-		1A4DD73E140055F10042A3E9 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		1A4DD73F140055F10042A3E9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		1A4DD740140055F10042A3E9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		1A4DD741140055F10042A3E9 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		1A4DD747140058D50042A3E9 /* testflighticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testflighticon.png; sourceTree = "<group>"; };
 		1A4E66D8140963EC0014D541 /* BoardPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardPiece.h; sourceTree = "<group>"; };
 		1A4E66D9140963EC0014D541 /* BoardPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardPiece.m; sourceTree = "<group>"; };
 		1A51ED8414005DBB000E29E7 /* BoardGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardGameView.h; sourceTree = "<group>"; };
 		1A51ED8514005DBB000E29E7 /* BoardGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardGameView.m; sourceTree = "<group>"; };
+		1A5608D7176A95BF004CA39D /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		1A5608D8176A95BF004CA39D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1A5608D9176A95BF004CA39D /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		1A5608DA176A95BF004CA39D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		1A65A013140062E000BA36D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A70771B14007183007E812E /* wood_red_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_red_64.png; sourceTree = "<group>"; };
 		1A70771C14007183007E812E /* wood_light_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_light_64.png; sourceTree = "<group>"; };
@@ -144,11 +146,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5608DB176A95BF004CA39D /* libTestFlight.a in Frameworks */,
 				1AE30E16140F1F0D0072B8B8 /* CoreGraphics.framework in Frameworks */,
 				1A65A014140062E000BA36D6 /* QuartzCore.framework in Frameworks */,
 				1A93567113FC4C6400B04DE1 /* UIKit.framework in Frameworks */,
 				1A93567313FC4C6400B04DE1 /* Foundation.framework in Frameworks */,
-				1A4DD743140055F10042A3E9 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,10 +197,10 @@
 		1A4DD73D140055F10042A3E9 /* testflightSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1A4DD73E140055F10042A3E9 /* README.txt */,
-				1A4DD73F140055F10042A3E9 /* TestFlight.h */,
-				1A4DD740140055F10042A3E9 /* libTestFlight.a */,
-				1A4DD741140055F10042A3E9 /* release_notes.txt */,
+				1A5608D7176A95BF004CA39D /* libTestFlight.a */,
+				1A5608D8176A95BF004CA39D /* README.md */,
+				1A5608D9176A95BF004CA39D /* release_notes.md */,
+				1A5608DA176A95BF004CA39D /* TestFlight.h */,
 			);
 			path = testflightSDK;
 			sourceTree = "<group>";
@@ -414,6 +416,8 @@
 				1A93567913FC4C6400B04DE1 /* InfoPlist.strings in Resources */,
 				1A93568513FC4C6500B04DE1 /* ViewController_iPhone.xib in Resources */,
 				1A93568813FC4C6500B04DE1 /* ViewController_iPad.xib in Resources */,
+				1A5608DC176A95BF004CA39D /* README.md in Resources */,
+				1A5608DD176A95BF004CA39D /* release_notes.md in Resources */,
 				1A9356AF13FC4CA400B04DE1 /* wood_light.jpg in Resources */,
 				1A9356B113FC4CA400B04DE1 /* wood_light_light.jpg in Resources */,
 				1A9356B313FC4CA400B04DE1 /* wood_red.jpg in Resources */,
