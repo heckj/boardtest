@@ -83,7 +83,6 @@
 }
 
 -(IBAction)launchFeedback {
-    [TestFlight openFeedbackView];
 }
 
 @end

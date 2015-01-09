@@ -20,8 +20,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     // set the local identifier for beta test only!
-    NSString * uniqId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    [TestFlight setDeviceIdentifier:uniqId];
     // launch test flight data consolidator..
     [TestFlight takeOff:@"a82b72a5-a25b-4635-90cb-a6f97785d10b"];
     // Override point for customization after application launch.
