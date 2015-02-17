@@ -35,7 +35,6 @@
 		1A93568213FC4C6500B04DE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93568113FC4C6500B04DE1 /* ViewController.m */; };
 		1A93568513FC4C6500B04DE1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A93568313FC4C6500B04DE1 /* ViewController_iPhone.xib */; };
 		1A93568813FC4C6500B04DE1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A93568613FC4C6500B04DE1 /* ViewController_iPad.xib */; };
-		1A93569013FC4C6500B04DE1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93568F13FC4C6500B04DE1 /* SenTestingKit.framework */; };
 		1A93569113FC4C6500B04DE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567013FC4C6400B04DE1 /* UIKit.framework */; };
 		1A93569213FC4C6500B04DE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A93567213FC4C6400B04DE1 /* Foundation.framework */; };
 		1A93569A13FC4C6500B04DE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A93569813FC4C6500B04DE1 /* InfoPlist.strings */; };
@@ -120,7 +119,6 @@
 		1A93568413FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		1A93568713FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		1A93568E13FC4C6500B04DE1 /* boardtestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = boardtestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A93568F13FC4C6500B04DE1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A93569713FC4C6500B04DE1 /* boardtestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "boardtestTests-Info.plist"; sourceTree = "<group>"; };
 		1A93569913FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A93569B13FC4C6500B04DE1 /* boardtestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boardtestTests.h; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A93569013FC4C6500B04DE1 /* SenTestingKit.framework in Frameworks */,
 				1A93569113FC4C6500B04DE1 /* UIKit.framework in Frameworks */,
 				1A93569213FC4C6500B04DE1 /* Foundation.framework in Frameworks */,
 			);
@@ -262,7 +259,6 @@
 				1A65A013140062E000BA36D6 /* QuartzCore.framework */,
 				1A93567013FC4C6400B04DE1 /* UIKit.framework */,
 				1A93567213FC4C6400B04DE1 /* Foundation.framework */,
-				1A93568F13FC4C6500B04DE1 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,7 +377,7 @@
 			name = boardtestTests;
 			productName = boardtestTests;
 			productReference = 1A93568E13FC4C6500B04DE1 /* boardtestTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -389,7 +385,7 @@
 		1A93566313FC4C6400B04DE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0620;
+				LastTestingUpgradeCheck = 0630;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Deallus Software";
 				TargetAttributes = {
@@ -679,15 +675,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/boardtest.app/boardtest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -697,15 +691,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/boardtest.app/boardtest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -771,15 +763,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/boardtest.app/boardtest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = "Ad Hoc";
 		};

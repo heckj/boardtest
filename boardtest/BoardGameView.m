@@ -256,8 +256,8 @@
     }
     
     if (self.pieceSelected == nil) {
-        if ( ((abs(round(self.startMovePosition.x-currentPosition.x))) < 3) && 
-            ((abs(round(self.startMovePosition.y-currentPosition.y))) < 3) && 
+        if ( ((fabs(round(self.startMovePosition.x-currentPosition.x))) < 3) &&
+            ((fabs(round(self.startMovePosition.y-currentPosition.y))) < 3) &&
             (touch.tapCount == 1) ) {
                 // didn't move between touchesBegn and touchesEnded
                 // just tapped... so select the piece at that location

@@ -27,20 +27,20 @@
 - (void)testExample
 {
 //    STFail(@"Unit tests are not implemented yet in boardtestTests");
-    STAssertTrue(TRUE, @"just sayin...");
+    XCTAssertTrue(TRUE, @"just sayin...");
 }
 
 - (void)testInitialGameBoardPieces
 {
     GameBoard *gb = [[GameBoard alloc] init];
 
-    STAssertFalse([gb isGameOver], @"default game isn't over");
+    XCTAssertFalse([gb isGameOver], @"default game isn't over");
     [gb boardStart];
-    STAssertEquals(EMPTY, [[gb pieceAtX:0 Y:0] intValue], @"piece is empty");
-    STAssertEquals(ATTACKER, [[gb pieceAtX:4 Y:0] intValue], @"piece is attacker");
-    STAssertEquals(DEFENDER, [[gb pieceAtX:4 Y:4] intValue], @"piece is defender");
-    STAssertEquals(KING, [[gb pieceAtX:5 Y:5] intValue], @"piece is king");
-    STAssertEquals(ATTACKING_PLAYER, gb.currentPlayer, @"initial player is attacker");
+    XCTAssertEqual(EMPTY, [[gb pieceAtX:0 Y:0] intValue], @"piece is empty");
+    XCTAssertEqual(ATTACKER, [[gb pieceAtX:4 Y:0] intValue], @"piece is attacker");
+    XCTAssertEqual(DEFENDER, [[gb pieceAtX:4 Y:4] intValue], @"piece is defender");
+    XCTAssertEqual(KING, [[gb pieceAtX:5 Y:5] intValue], @"piece is king");
+    XCTAssertEqual(ATTACKING_PLAYER, gb.currentPlayer, @"initial player is attacker");
 }
 
 - (void)testInvalidMoveEmpty {
@@ -53,9 +53,9 @@
     testMove.toX = 1;
     testMove.toY = 0;
     
-    STAssertFalse([gb isValidMove:testMove], @"moving an empty piece is an invalid move");
+    XCTAssertFalse([gb isValidMove:testMove], @"moving an empty piece is an invalid move");
     GameBoard *newBoard = [gb executeMove:testMove];
-    STAssertNil(newBoard, @"executing an invalid move results in Nil");
+    XCTAssertNil(newBoard, @"executing an invalid move results in Nil");
 }
 
 - (void)testValidMoveAttacker {
@@ -68,14 +68,14 @@
     testMove.toX = 1;
     testMove.toY = 0;
     
-    STAssertTrue([gb isValidMove:testMove], @"moving attacker to empty square - valid");
+    XCTAssertTrue([gb isValidMove:testMove], @"moving attacker to empty square - valid");
     GameBoard *newBoard = [gb executeMove:testMove];
-    STAssertNotNil(newBoard, @"Valid move should result in a new board");
-    STAssertEquals(DEFENDING_PLAYER, newBoard.currentPlayer, @"player on new board should defender");
+    XCTAssertNotNil(newBoard, @"Valid move should result in a new board");
+    XCTAssertEqual(DEFENDING_PLAYER, newBoard.currentPlayer, @"player on new board should defender");
     NSNumber *oldPlacePiece = [newBoard pieceAtX:3 Y:0];
     NSNumber *newPlacePiece = [newBoard pieceAtX:1 Y:0];
-    STAssertEquals(EMPTY, [oldPlacePiece intValue], @"old position should now be empty");
-    STAssertEquals(ATTACKER, [newPlacePiece intValue], @"new position should now be an attacker");
+    XCTAssertEqual(EMPTY, [oldPlacePiece intValue], @"old position should now be empty");
+    XCTAssertEqual(ATTACKER, [newPlacePiece intValue], @"new position should now be an attacker");
 
 }
 @end

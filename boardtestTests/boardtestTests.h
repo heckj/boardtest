@@ -6,12 +6,12 @@
 //  Copyright (c) 2011 Deallus Software. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "GameBoard.h"
 #import "GameMove.h"
 #import "Player.h"
 
-@interface boardtestTests : SenTestCase
+@interface boardtestTests : XCTestCase
 
 - (void)testInitialGameBoardPieces;
 - (void)testInvalidMoveEmpty;
