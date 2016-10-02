@@ -118,7 +118,7 @@
 		1A93568113FC4C6500B04DE1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1A93568413FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		1A93568713FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
-		1A93568E13FC4C6500B04DE1 /* boardtestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = boardtestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A93568E13FC4C6500B04DE1 /* boardtestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = boardtestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A93569713FC4C6500B04DE1 /* boardtestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "boardtestTests-Info.plist"; sourceTree = "<group>"; };
 		1A93569913FC4C6500B04DE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A93569B13FC4C6500B04DE1 /* boardtestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boardtestTests.h; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				1A93566C13FC4C6400B04DE1 /* boardtest.app */,
-				1A93568E13FC4C6500B04DE1 /* boardtestTests.octest */,
+				1A93568E13FC4C6500B04DE1 /* boardtestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 			);
 			name = boardtestTests;
 			productName = boardtestTests;
-			productReference = 1A93568E13FC4C6500B04DE1 /* boardtestTests.octest */;
+			productReference = 1A93568E13FC4C6500B04DE1 /* boardtestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0630;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Deallus Software";
 				TargetAttributes = {
 					1A93566B13FC4C6400B04DE1 = {
@@ -565,15 +565,19 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Heck (RGF7P769P6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -605,7 +609,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Heck (RGF7P769P6)";
@@ -613,6 +619,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -637,11 +644,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "27BA7EF6-F1CB-4F2E-B5C3-5489AB62A09F";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -657,11 +665,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "27BA7EF6-F1CB-4F2E-B5C3-5489AB62A09F";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -680,6 +689,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -696,6 +706,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -710,7 +721,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Heck (RGF7P769P6)";
@@ -718,6 +731,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -744,11 +758,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtest/boardtest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/testflightSDK\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "27BA7EF6-F1CB-4F2E-B5C3-5489AB62A09F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -768,6 +783,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boardtest/boardtest-Prefix.pch";
 				INFOPLIST_FILE = "boardtestTests/boardtestTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deallus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
