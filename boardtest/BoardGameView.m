@@ -249,7 +249,7 @@
         } else {
                 //invalid move - animate piece reverting...
             [UIView animateWithDuration:0.5 animations:^{
-                self.pieceBeingMoved.center = [self centerForGamePositionX:pieceBeingMoved.X Y:pieceBeingMoved.Y];
+                self.pieceBeingMoved.center = [self centerForGamePositionX:self->pieceBeingMoved.X Y:self->pieceBeingMoved.Y];
             }];
         }
         self.pieceBeingMoved = nil;
